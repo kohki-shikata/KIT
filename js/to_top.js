@@ -1,9 +1,11 @@
 // this script depends on jQuery
-  $('#toTop').click(function(){
-    var speed = 400;
-    var href= $(this).attr("href");
-    var target = $(href == "#" || href == "" ? 'html' : href);
-    var position = target.offset().top;
-    $("html, body").animate({scrollTop:position}, speed, "swing");
-    return false;
-  });
+function to_top() {
+  var speed = 400;
+  var href= $(this).attr("href");
+  var target = $(href == "#" || href == "" ? 'html' : href);
+  var position = target.offset().top;
+  $("html, body").animate({scrollTop:position}, speed, "swing");
+  return false;
+}
+  
+$('#toTop').click(to_top());
